@@ -1,0 +1,148 @@
+/* ====================================================
+   VíaAlerta — responsive.css
+   Diseño adaptativo con Media Queries (@media)
+   Estándares W3C · Competencia 220501096
+   ==================================================== */
+
+/* ---- TABLETAS: máximo 1024px ---- */
+@media (max-width: 1024px) {
+  .hero-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .reportes-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .mapa-container {
+    grid-template-columns: 180px 1fr;
+  }
+  .gravedad-selector {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .footer-inner {
+    grid-template-columns: 1fr 1fr;
+  }
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+}
+
+/* ---- TABLETAS PEQUEÑAS: máximo 768px ---- */
+@media (max-width: 768px) {
+  /* Header */
+  #main-nav {
+    display: none;
+    position: fixed;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: rgba(15,17,23,0.97);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 1.5rem;
+    z-index: 99;
+  }
+  #main-nav.abierto { display: block; }
+  #main-nav ul { flex-direction: column; gap: 1rem; }
+  #main-nav a { font-size: 1rem; }
+  .menu-toggle { display: block; }
+  .btn-report-nav { display: none; }
+
+  /* Hero */
+  #hero { padding: 3rem 1.25rem 2.5rem; }
+  .hero-content h1 { font-size: 1.8rem; }
+  .hero-btns { flex-direction: column; }
+  .hero-btns .btn-primary,
+  .hero-btns .btn-outline { width: 100%; text-align: center; }
+  .hero-stats { grid-template-columns: repeat(2, 1fr); }
+
+  /* Mapa */
+  .mapa-container {
+    grid-template-columns: 1fr;
+  }
+  .mapa-leyenda {
+    order: 2;
+  }
+  .mapa-ilustrado {
+    order: 1;
+  }
+
+  /* Reportes */
+  .reportes-grid { grid-template-columns: 1fr; }
+
+  /* Formulario */
+  .form-grid { grid-template-columns: 1fr; }
+  .form-card { padding: 1.25rem; border-radius: var(--radius-lg); }
+  .gravedad-selector { grid-template-columns: repeat(2, 1fr); }
+  .form-actions { flex-direction: column; }
+  .form-actions .btn-outline,
+  .form-actions .btn-primary { width: 100%; text-align: center; }
+
+  /* Footer */
+  .footer-inner { grid-template-columns: 1fr; gap: 1.5rem; }
+
+  /* Secciones */
+  section { padding: 3rem 1.25rem; }
+}
+
+/* ---- MÓVILES: máximo 480px ---- */
+@media (max-width: 480px) {
+  :root {
+    --gap: 16px;
+  }
+
+  /* Header */
+  .header-inner { padding: 0 1rem; }
+  .logo-text { font-size: 1rem; }
+
+  /* Hero */
+  #hero { padding: 2rem 1rem 2rem; }
+  .hero-content h1 { font-size: 1.5rem; }
+  .hero-desc { font-size: 0.95rem; }
+  .hero-stats { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  .stat-num { font-size: 1.5rem; }
+  .stat-card { padding: 1rem 0.75rem; }
+
+  /* Secciones */
+  section { padding: 2.5rem 1rem; }
+  .section-header h2 { font-size: 1.4rem; }
+
+  /* Gravedad selector en 1 columna en móvil muy pequeño */
+  .gravedad-selector { grid-template-columns: 1fr 1fr; }
+  .gravedad-desc { display: none; }
+
+  /* Cards reportes */
+  .reporte-card { padding: 1rem; }
+  .card-acciones { flex-direction: column; }
+
+  /* Formulario */
+  .form-container { padding: 0; }
+  .form-card { border-radius: var(--radius-lg); }
+
+  /* Estado */
+  .estado-buscador { flex-direction: column; }
+  .estado-buscador button { width: 100%; }
+
+  /* Footer */
+  .footer-inner { padding: 2rem 1rem 1.5rem; }
+}
+
+/* ---- PANTALLAS GRANDES: mínimo 1280px ---- */
+@media (min-width: 1280px) {
+  .reportes-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  #hero {
+    padding: 6rem 1.5rem 5rem;
+  }
+  .hero-stats {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ---- PREFERENCIA DE MOVIMIENTO REDUCIDO ---- */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
