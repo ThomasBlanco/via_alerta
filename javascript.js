@@ -247,5 +247,53 @@ function handleRegister(e) {
   }, 600);
 }
 
+const menuToggle = document.getElementById('menuToggle');
+if (menuToggle) {
+  menuToggle.addEventListener('click', () => {
+    const mainNav = document.getElementById('main-nav');
+    const sidebar = document.querySelector('.dashboard-sidebar');
+    
+    // Para index.html (usa clase 'abierto')
+    if (mainNav) {
+      mainNav.classList.toggle('abierto');
+      console.log('main-nav abierto:', mainNav.classList.contains('abierto'));
+    }
+    
+    // Para dashboard.html (usa clase 'sidebar-open' en body)
+    if (sidebar) {
+      document.body.classList.toggle('sidebar-open');
+      console.log('sidebar-open:', document.body.classList.contains('sidebar-open'));
+    }
+  });
+}
+
+// Cerrar sidebar en dashboard.html al hacer click en un elemento de navegación
+document.querySelectorAll('.sidebar-nav-item').forEach(item => {
+  item.addEventListener('click', () => {
+    if (window.innerWidth <= 768) {
+      document.body.classList.remove('sidebar-open');
+    }
+  });
+});
+
+// Cerrar sidebar al hacer click en el overlay (dashboard.html)
+document.addEventListener('click', (e) => {
+  if (window.innerWidth <= 768 && document.body.classList.contains('sidebar-open')) {
+    if (!e.target.closest('.dashboard-sidebar') && !e.target.closest('.menu-toggle-btn')) {
+      document.body.classList.remove('sidebar-open');
+    }
+  }
+  
+  // Para index.html: cerrar menú al hacer click fuera
+  if (window.innerWidth <= 768) {
+    const mainNav = document.getElementById('main-nav');
+    if (mainNav && mainNav.classList.contains('abierto')) {
+      if (!e.target.closest('#main-nav') && !e.target.closest('.menu-toggle')) {
+        mainNav.classList.remove('abierto');
+      }
+    }
+  }
+});
+
 initDashboard();
 openViewFromQuery();

@@ -24,11 +24,11 @@
           <li><a href="#reportes">Reportes</a></li>
           <li><a href="#estado">Estado</a></li>
         </ul>
+        <div class="header-auth">
+          <a href="inicio_sesion.html" class="btn-login-nav">Iniciar sesión</a>
+          <a href="registro_usuario.html" class="btn-register-nav">Registrarse</a>
+        </div>
       </nav>
-      <div class="header-auth">
-        <a href="inicio_sesion.html" class="btn-login-nav">Iniciar sesión</a>
-        <a href="registro_usuario.html" class="btn-register-nav">Registrarse</a>
-      </div>
       <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">&#9776;</button>
     </div>
   </header>
@@ -80,7 +80,8 @@
             </clipPath>
           </defs>
 
-          <!-- Background -->
+          <!-- Fondo -->
+          <img src="./img/hueco.jpg" alt="Hueco en la vía">
           <rect width="520" height="420" fill="#0f1117" rx="20"/>
 
           <!-- Ambient glows -->
@@ -243,82 +244,11 @@
 
           <!-- ===== FLOATING UI CARDS ===== -->
 
-          <!-- Card 1 — CRITICAL alert (top left) -->
-          <g filter="url(#glow-filter)">
-            <rect x="18" y="30" width="175" height="72" rx="12" fill="url(#card-grad)" stroke="rgba(229,57,53,0.35)" stroke-width="1"/>
-            <rect x="18" y="30" width="175" height="3" rx="2" fill="#e53935" opacity="0.8"/>
-            <!-- Icon bg -->
-            <rect x="28" y="44" width="30" height="30" rx="8" fill="rgba(229,57,53,0.15)"/>
-            <text x="43" y="64" font-family="sans-serif" font-size="16" text-anchor="middle" fill="#e53935">⚠</text>
-            <!-- Text -->
-            <text x="68" y="55" font-family="Space Grotesk, sans-serif" font-size="10" font-weight="700" fill="#f1f5f9">Reporte Crítico</text>
-            <text x="68" y="68" font-family="Space Grotesk, sans-serif" font-size="9" fill="#94a3b8">Av. El Dorado · Kennedy</text>
-            <!-- Badge -->
-            <rect x="68" y="74" width="46" height="16" rx="4" fill="rgba(229,57,53,0.2)"/>
-            <text x="91" y="85" font-family="Space Grotesk, sans-serif" font-size="8" font-weight="600" fill="#e53935" text-anchor="middle">URGENTE</text>
-            <!-- Pulse -->
-            <circle cx="184" cy="44" r="5" fill="#e53935"/>
-            <circle cx="184" cy="44" r="5" fill="none" stroke="#e53935" stroke-width="2" opacity="0.6">
-              <animate attributeName="r" from="5" to="12" dur="1.5s" repeatCount="indefinite"/>
-              <animate attributeName="opacity" from="0.6" to="0" dur="1.5s" repeatCount="indefinite"/>
-            </circle>
-          </g>
-
-          <!-- Card 2 — Status card (top right) -->
-          <g>
-            <rect x="325" y="22" width="178" height="80" rx="12" fill="url(#card-grad)" stroke="rgba(56,189,248,0.25)" stroke-width="1"/>
-            <rect x="325" y="22" width="178" height="3" rx="2" fill="#38bdf8" opacity="0.7"/>
-            <text x="340" y="44" font-family="Space Grotesk, sans-serif" font-size="9" font-weight="600" fill="#64748b" letter-spacing="1">ESTADO DEL REPORTE</text>
-            <!-- Timeline mini -->
-            <circle cx="340" cy="62" r="5" fill="#22c55e"/>
-            <text x="352" y="66" font-family="Space Grotesk, sans-serif" font-size="9" fill="#94a3b8">Recibido</text>
-            <line x1="340" y1="67" x2="340" y2="78" stroke="#22c55e" stroke-width="1.5" opacity="0.5"/>
-            <circle cx="340" cy="82" r="5" fill="#38bdf8"/>
-            <text x="352" y="86" font-family="Space Grotesk, sans-serif" font-size="9" fill="#94a3b8">En revisión</text>
-            <!-- Code -->
-            <text x="430" y="66" font-family="IBM Plex Mono, monospace" font-size="9" fill="#38bdf8" text-anchor="middle">#VIA-2025</text>
-            <text x="430" y="78" font-family="IBM Plex Mono, monospace" font-size="9" fill="#38bdf8" text-anchor="middle">-214</text>
-          </g>
-
-          <!-- Card 3 — Stats mini (bottom right floating) -->
-          <g>
-            <rect x="358" y="230" width="148" height="68" rx="12" fill="url(#card-grad)" stroke="rgba(249,115,22,0.25)" stroke-width="1"/>
-            <text x="373" y="250" font-family="Space Grotesk, sans-serif" font-size="9" font-weight="600" fill="#64748b" letter-spacing="1">REPORTES HOY</text>
-            <text x="373" y="274" font-family="IBM Plex Mono, monospace" font-size="26" font-weight="700" fill="#f97316">14</text>
-            <!-- Mini bar chart -->
-            <g fill="#f97316" opacity="0.5">
-              <rect x="440" y="266" width="8" height="22" rx="2"/>
-              <rect x="452" y="271" width="8" height="17" rx="2"/>
-              <rect x="464" y="258" width="8" height="30" rx="2"/>
-              <rect x="476" y="263" width="8" height="25" rx="2"/>
-              <rect x="488" y="255" width="8" height="33" rx="2"/>
-            </g>
-            <g fill="#f97316" opacity="0.9">
-              <rect x="488" y="255" width="8" height="33" rx="2"/>
-            </g>
-          </g>
-
-          <!-- Card 4 — Mini notification (bottom left) -->
-          <g>
-            <rect x="18" y="235" width="152" height="56" rx="10" fill="url(#card-grad)" stroke="rgba(34,197,94,0.25)" stroke-width="1"/>
-            <rect x="28" y="249" width="22" height="22" rx="6" fill="rgba(34,197,94,0.15)"/>
-            <text x="39" y="264" font-family="sans-serif" font-size="12" text-anchor="middle" fill="#22c55e">✓</text>
-            <text x="58" y="257" font-family="Space Grotesk, sans-serif" font-size="9" font-weight="700" fill="#f1f5f9">¡Reparado!</text>
-            <text x="58" y="269" font-family="Space Grotesk, sans-serif" font-size="8" fill="#94a3b8">Cra. 7 · La Candelaria</text>
-            <text x="58" y="280" font-family="Space Grotesk, sans-serif" font-size="8" fill="#64748b">hace 5 min</text>
-          </g>
+      
+      
 
           <!-- Damage pin on road -->
-          <g>
-            <circle cx="230" cy="326" r="14" fill="#e53935" opacity="0.95"/>
-            <text x="230" y="331" font-family="sans-serif" font-size="13" text-anchor="middle" fill="white" font-weight="bold">!</text>
-            <circle cx="230" cy="326" r="14" fill="none" stroke="#e53935" stroke-width="2.5" opacity="0.5">
-              <animate attributeName="r" from="14" to="28" dur="2s" repeatCount="indefinite"/>
-              <animate attributeName="opacity" from="0.5" to="0" dur="2s" repeatCount="indefinite"/>
-            </circle>
-            <!-- Pin line to pothole -->
-            <line x1="230" y1="340" x2="230" y2="348" stroke="#e53935" stroke-width="1.5" opacity="0.5"/>
-          </g>
+         
 
           <!-- Floating dots decoration -->
           <g fill="#38bdf8" opacity="0.4">
